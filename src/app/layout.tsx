@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "@radix-ui/themes/styles.css";
 import "./globals.css";
-import { Theme } from "@radix-ui/themes";
+import { Container, Theme } from "@radix-ui/themes";
+import Header from "@/components/header";
+import Footer from "@/components/footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +21,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Theme appearance="light">{children}</Theme>
+        <Theme appearance="dark">
+          <div
+            className="fixed w-full h-full  -z-50"
+            style={{
+              backgroundImage: 'url("/background.svg")',
+              backgroundSize: "cover",
+              backgroundRepeat: "no-repeat",
+            }}
+          ></div>
+          <Header />
+          <Container minWidth="1200px" maxWidth="1200px">
+            {/* <Container size="4"> */}
+            {children}
+            <Footer />
+          </Container>
+        </Theme>
       </body>
     </html>
   );
