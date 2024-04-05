@@ -1,13 +1,18 @@
-import { Box, Flex } from "@radix-ui/themes";
+import { Flex } from "@radix-ui/themes";
+import Hero from "@/components/hero";
 
 export default function Home() {
   return (
-    <main className="mt-16  relative flex">
-      <div className="border-4 border-red-900 sticky top-16  w-1/3 h-[400px]"></div>
+    <main className="flex">
+      <Hero />
       <Flex
-        className="border-4 border-blue-800 w-1/3 flex-grow"
-        height="120rem"
-      ></Flex>
+        className="grow "
+        height="220rem"
+        direction="column"
+        justify="center"
+      >
+        <section id="blogs">aaa</section>
+      </Flex>
     </main>
   );
 }
