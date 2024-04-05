@@ -6,7 +6,7 @@ export default function Home() {
     <main className="flex">
       <Hero />
       <Flex
-        className="grow border-4 border-blue-800"
+        className="grow "
         height="220rem"
         direction="column"
         justify="center"
