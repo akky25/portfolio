@@ -21,17 +21,22 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Theme appearance="dark">
+        <Theme
+          appearance="dark"
+          accentColor="yellow"
+          grayColor="sage"
+          panelBackground="translucent"
+        >
           <div
-            className="fixed w-full h-full  -z-50"
+            className="fixed -z-50 size-full"
             style={{
               backgroundImage: 'url("/background.svg")',
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
           ></div>
-          <Header />
           <Container minWidth="1200px" maxWidth="1200px">
+            <Header />
             {/* <Container size="4"> */}
             {children}
             <Footer />
