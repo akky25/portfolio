@@ -1,7 +1,7 @@
 import { Text, Flex, Box, Heading } from "@radix-ui/themes";
 import Image from "next/image";
 import { Montserrat_Subrayada, Montserrat } from "next/font/google";
-import LogoImage from "./logo.webp";
+import LogoImage from "./assets/logo.webp";
 
 const montserratSubrayada = Montserrat_Subrayada({
   subsets: ["latin"],
