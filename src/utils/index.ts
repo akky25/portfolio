@@ -32,7 +32,7 @@ export async function fetchGitHubContributions(
 ): Promise<ContributionData[]> {
   const endDate = new Date();
   const startDate = new Date();
-  startDate.setDate(endDate.getDate() - daysAgo); // 60日前の日付を設定
+  startDate.setDate(endDate.getDate() - daysAgo);
 
   const query = `
   query {
@@ -59,6 +59,7 @@ export async function fetchGitHubContributions(
         Authorization: `bearer ${process.env.GITHUB_API_TOKEN}`,
       },
       body: JSON.stringify({ query }),
+      next: { revalidate: 24 * 60 * 60 },
     });
 
     const responseBody: GitHubResponse = await response.json();
