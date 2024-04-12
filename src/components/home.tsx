@@ -5,6 +5,7 @@ import {
   Flex,
   Grid,
   Inset,
+  Spinner,
   Text,
 } from "@radix-ui/themes";
 import { SVGProps } from "react";
@@ -159,13 +160,15 @@ async function GitHubCard() {
             </Flex>
           </Flex>
           <Box position="relative">
-            <Flex gap="6" pl="4">
-              {getPastThreeMonths().map((month) => (
-                <Text key={month} color="gray" size="1">
-                  {month}
-                </Text>
-              ))}
-            </Flex>
+            {gitHubContributions.length !== 0 && (
+              <Flex gap="6" pl="4">
+                {getPastThreeMonths().map((month) => (
+                  <Text key={month} color="gray" size="1">
+                    {month}
+                  </Text>
+                ))}
+              </Flex>
+            )}
             <Grid
               flow="column"
               rows="repeat(7, 1fr)"
@@ -175,12 +178,16 @@ async function GitHubCard() {
               p="4"
               pt="1"
             >
-              {gitHubContributions.map((items, i) => (
-                <AspectRatio
-                  key={i}
-                  className={colorByNumber(items.contributionCount)}
-                />
-              ))}
+              {gitHubContributions.length === 0 ? (
+                <Spinner className="absolute left-[40%] top-[40%]" />
+              ) : (
+                gitHubContributions.map((items, i) => (
+                  <AspectRatio
+                    key={i}
+                    className={colorByNumber(items.contributionCount)}
+                  />
+                ))
+              )}
             </Grid>
           </Box>
         </Flex>
