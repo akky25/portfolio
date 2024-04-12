@@ -15,16 +15,17 @@ const montserrat = Montserrat({
 export default function Hero() {
   return (
     <Flex
-      className="sticky top-28 h-[70vh] w-2/5 "
+      className="top-28 lg:sticky lg:h-[70vh] lg:w-2/5"
       direction="column"
       justify="center"
       align="center"
       gap="4"
+      pt={{ initial: "9", md: "0" }}
     >
       {/* Logo */}
       <Box
-        width="170px"
-        className=" aspect-square rounded-full"
+        width={{ initial: "140px", md: "170px" }}
+        className="aspect-square rounded-full"
         overflow="hidden"
       >
         <Image src={LogoImage} alt="ロゴ" className="scale-150" />
@@ -41,7 +42,14 @@ export default function Hero() {
       </Flex>
 
       {/* Description */}
-      <Flex gap="2" direction="column" className="self-stretch">
+      <Flex
+        gap="2"
+        direction="column"
+        className="lg:self-stretch"
+        px={{ initial: "4", lg: "0" }}
+        pt={{ initial: "8", lg: "0" }}
+        maxWidth={{ initial: "auto", xs: "30rem", md: "auto" }}
+      >
         <Heading as="h2" size="5" className={montserrat.className}>
           About Me
         </Heading>
