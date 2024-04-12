@@ -4,7 +4,7 @@ import Home from "@/components/home";
 
 export default function Main() {
   return (
-    <main className="flex">
+    <main className="flex flex-col lg:flex-row">
       <Hero />
       <Flex className="grow " height="220rem" direction="column">
         <Home />

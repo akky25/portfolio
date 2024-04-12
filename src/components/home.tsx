@@ -34,7 +34,7 @@ export default function Home() {
   return (
     <Flex
       asChild
-      height="70vh"
+      height={{ initial: "60vh", sm: "70vh" }}
       direction="column"
       align="center"
       justify="center"
@@ -71,19 +71,18 @@ function SnsLinkCard({
         <Flex
           align="center"
           direction="column"
-          width="8rem"
+          width={{ initial: "5rem", sm: "8rem" }}
           className="aspect-square"
           gap="3"
         >
-          <Icon
-            height="4rem"
-            className="aspect-square text-[var(--accent-9)]"
-          />
+          <Icon className="aspect-square h-8 text-[var(--accent-9)] md:h-16" />
           <Flex direction="column" justify="center" align="center">
-            <Text color="yellow" size="5">
+            <Text color="yellow" size={{ initial: "2", sm: "5" }}>
               {title}
             </Text>
-            <Text color="gray">{handle}</Text>
+            <Text color="gray" size={{ initial: "1", sm: "3" }}>
+              {handle}
+            </Text>
           </Flex>
         </Flex>
       </Card>
@@ -97,7 +96,7 @@ function MapCard() {
       <Card>
         <Inset>
           <Box
-            width="148px"
+            width={{ initial: "104px", sm: "148px" }}
             className=" aspect-square"
             overflow="hidden"
             position="relative"
@@ -116,7 +115,10 @@ function MapCard() {
               }}
               className="rounded-md bg-gray-100/30 px-2"
             >
-              <Text className="whitespace-nowrap text-black">
+              <Text
+                className="whitespace-nowrap text-black"
+                size={{ initial: "1", sm: "3" }}
+              >
                 Saitama, Japan
               </Text>
             </Box>
@@ -127,6 +129,7 @@ function MapCard() {
   );
 }
 
+// 過去12週間のGitHub contribute 取得するための日数
 const DAYS = 7 * 12;
 
 async function GitHubCard() {
@@ -142,20 +145,19 @@ async function GitHubCard() {
           <Flex
             align="center"
             direction="column"
-            width="8rem"
+            width={{ initial: "5rem", sm: "8rem" }}
             className="aspect-square"
             gap="3"
             justify="center"
           >
-            <GitHub
-              height="4rem"
-              className="aspect-square text-[var(--accent-9)]"
-            />
+            <GitHub className="aspect-square h-12 text-[var(--accent-9)] md:h-16" />
             <Flex direction="column" justify="center" align="center">
-              <Text color="yellow" size="5">
+              <Text color="yellow" size={{ initial: "2", sm: "5" }}>
                 GitHub
               </Text>
-              <Text color="gray">akky25</Text>
+              <Text color="gray" size={{ initial: "1", sm: "3" }}>
+                akky25
+              </Text>
             </Flex>
           </Flex>
           <Box position="relative">
@@ -172,7 +174,7 @@ async function GitHubCard() {
               gap="1"
               columns="12"
               width="12rem"
-              p="4"
+              p={{ initial: "2", sm: "4" }}
               pt="1"
             >
               {gitHubContributions.map((items, i) => (

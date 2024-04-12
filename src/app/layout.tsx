@@ -25,16 +25,18 @@ export default function RootLayout({
           panelBackground="translucent"
         >
           <div
-            className="fixed -z-50 size-full"
+            className="fixed -z-50 h-screen w-screen "
             style={{
               backgroundImage: 'url("/background.svg")',
               backgroundSize: "cover",
               backgroundRepeat: "no-repeat",
             }}
           ></div>
-          <Container minWidth="1200px" maxWidth="1200px">
+          <Container
+            minWidth={{ md: "1000px", lg: "1200px" }}
+            maxWidth={{ md: "1000px", lg: "1200px" }}
+          >
             <Header />
-            {/* <Container size="4"> */}
             {children}
             <Footer />
           </Container>
