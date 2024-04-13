@@ -11,6 +11,7 @@ import Image from "next/image";
 import { SECTIONS } from "@/constant";
 import NttDataLogo from "./assets/ntt-data-1.svg";
 import SectionHeading from "./section-heading";
+import LinkTarget from "./link-target";
 
 const DOT_LEFT_POSITION = {
   initial: "2%",
@@ -66,78 +67,28 @@ const EXPERIENCES: React.ComponentProps<typeof ExperienceCard>[] = [
 
 export default function Experiences() {
   return (
-    <Flex
-      align="center"
-      pt="9"
-      direction="column"
-      asChild
-      px={{ initial: "4", sm: "7", md: "4" }}
-    >
-      <section id={SECTIONS.EXPERIENCES}>
-        {/* <section> */}
-        <SectionHeading title="Experiences" />
-        <Flex
-          width="100%"
-          direction="column"
-          align="stretch"
-          pt="7"
-          pb={{ initial: "7", xs: "5" }}
-          // gap="4"
-          position="relative"
-        >
-          <Box
-            position="absolute"
-            top="4%"
-            bottom="0"
-            width="1px"
-            left={SEPARATOR_LEFT_POSITION}
+    <LinkTarget name={SECTIONS.EXPERIENCES}>
+      <Flex
+        align="center"
+        direction="column"
+        asChild
+        px={{ initial: "4", sm: "7", md: "4" }}
+      >
+        <section id={SECTIONS.EXPERIENCES}>
+          {/* <section> */}
+          <SectionHeading title="Experiences" />
+          <Flex
+            width="100%"
+            direction="column"
+            align="stretch"
+            pt="7"
+            pb={{ initial: "7", xs: "5" }}
+            // gap="4"
+            position="relative"
           >
-            <Separator
-              size="4"
-              orientation="vertical"
-              // mt="5"
-              style={{
-                background: "var(--yellow-9)",
-              }}
-            />
-          </Box>
-          <ScrollArea
-            type="always"
-            scrollbars="vertical"
-            style={{ height: "40vh" }}
-          >
-            <Flex direction="column" gap="4">
-              {EXPERIENCES.map((experience) => (
-                <ExperienceCard {...experience} key={experience.title} />
-              ))}
-            </Flex>
-          </ScrollArea>
-        </Flex>
-        <Box
-          className="self-stretch"
-          pl={{ initial: "0", sm: "2" }}
-          pt="2"
-          pb="6"
-          position="relative"
-          asChild
-        >
-          <article>
-            <Image src={NttDataLogo} alt="NTTDATAロゴ画像" height="25" />
-            <Flex
-              gap={{ initial: "0", xs: "2" }}
-              align={{ initial: "start", xs: "center" }}
-              direction={{ initial: "column", xs: "row" }}
-            >
-              <Text weight="bold" size={{ initial: "3", xs: "4" }}>
-                株式会社 NTTデータ・ビジネス・システムズ
-              </Text>
-              <Text size={{ initial: "1", xs: "2" }} color="gray">
-                2016年 入社
-              </Text>
-            </Flex>
             <Box
               position="absolute"
-              top={{ initial: "75%", xs: "70%" }}
+              top="4%"
               bottom="0"
               width="1px"
               left={SEPARATOR_LEFT_POSITION}
@@ -145,54 +96,105 @@ export default function Experiences() {
               <Separator
                 size="4"
                 orientation="vertical"
+                // mt="5"
                 style={{
                   background: "var(--yellow-9)",
                 }}
               />
             </Box>
-          </article>
-        </Box>
-        <Box
-          className="self-stretch"
-          pl={{ initial: "0", sm: "2" }}
-          pt="2"
-          pb="7"
-          position="relative"
-          asChild
-        >
-          <article>
-            <Flex
-              gap={{ initial: "0", xs: "2" }}
-              align={{ initial: "start", xs: "center" }}
-              direction={{ initial: "column", xs: "row" }}
+            <ScrollArea
+              type="always"
+              scrollbars="vertical"
+              style={{ height: "40vh" }}
             >
-              <Text weight="bold" size={{ initial: "3", xs: "4" }}>
-                日本大学大学院 理工学研究科 物理学専攻
-              </Text>
-              <Text size={{ initial: "1", xs: "2" }} color="gray">
-                2016年 修了
-              </Text>
-            </Flex>
-            <Box
-              position="absolute"
-              top={{ initial: "65%", xs: "55%" }}
-              bottom="0"
-              width="1px"
-              left={SEPARATOR_LEFT_POSITION}
-            >
-              <Separator
-                size="4"
-                orientation="vertical"
-                style={{
-                  background:
-                    "linear-gradient(to bottom, var(--yellow-9) 50%, transparent)",
-                }}
-              />
-            </Box>
-          </article>
-        </Box>
-      </section>
-    </Flex>
+              <Flex direction="column" gap="4">
+                {EXPERIENCES.map((experience) => (
+                  <ExperienceCard {...experience} key={experience.title} />
+                ))}
+              </Flex>
+            </ScrollArea>
+          </Flex>
+          <Box
+            className="self-stretch"
+            pl={{ initial: "0", sm: "2" }}
+            pt="2"
+            pb="6"
+            position="relative"
+            asChild
+          >
+            <article>
+              <Image src={NttDataLogo} alt="NTTDATAロゴ画像" height="25" />
+              <Flex
+                gap={{ initial: "0", xs: "2" }}
+                align={{ initial: "start", xs: "center" }}
+                direction={{ initial: "column", xs: "row" }}
+              >
+                <Text weight="bold" size={{ initial: "3", xs: "4" }}>
+                  株式会社 NTTデータ・ビジネス・システムズ
+                </Text>
+                <Text size={{ initial: "1", xs: "2" }} color="gray">
+                  2016年 入社
+                </Text>
+              </Flex>
+              <Box
+                position="absolute"
+                top={{ initial: "75%", xs: "70%" }}
+                bottom="0"
+                width="1px"
+                left={SEPARATOR_LEFT_POSITION}
+              >
+                <Separator
+                  size="4"
+                  orientation="vertical"
+                  style={{
+                    background: "var(--yellow-9)",
+                  }}
+                />
+              </Box>
+            </article>
+          </Box>
+          <Box
+            className="self-stretch"
+            pl={{ initial: "0", sm: "2" }}
+            pt="2"
+            pb="7"
+            position="relative"
+            asChild
+          >
+            <article>
+              <Flex
+                gap={{ initial: "0", xs: "2" }}
+                align={{ initial: "start", xs: "center" }}
+                direction={{ initial: "column", xs: "row" }}
+              >
+                <Text weight="bold" size={{ initial: "3", xs: "4" }}>
+                  日本大学大学院 理工学研究科 物理学専攻
+                </Text>
+                <Text size={{ initial: "1", xs: "2" }} color="gray">
+                  2016年 修了
+                </Text>
+              </Flex>
+              <Box
+                position="absolute"
+                top={{ initial: "65%", xs: "55%" }}
+                bottom="0"
+                width="1px"
+                left={SEPARATOR_LEFT_POSITION}
+              >
+                <Separator
+                  size="4"
+                  orientation="vertical"
+                  style={{
+                    background:
+                      "linear-gradient(to bottom, var(--yellow-9) 50%, transparent)",
+                  }}
+                />
+              </Box>
+            </article>
+          </Box>
+        </section>
+      </Flex>
+    </LinkTarget>
   );
 }
 

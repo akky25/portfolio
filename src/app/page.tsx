@@ -9,12 +9,7 @@ export default function Main() {
   return (
     <main className="flex flex-col lg:flex-row">
       <Hero />
-      <Flex
-        className="grow lg:w-3/5"
-        height="220rem"
-        direction="column"
-        gap="3"
-      >
+      <Flex className="grow gap-40 lg:w-3/5" height="320rem" direction="column">
         <Home />
         <Skills />
         <Experiences />

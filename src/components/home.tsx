@@ -16,6 +16,7 @@ import { LINK_URL, SECTIONS } from "@/constant";
 import { fetchGitHubContributions } from "@/utils";
 import { GitHub, Z, Zenn } from "./icon";
 import MapImage from "./assets/map.png";
+import LinkTarget from "./link-target";
 
 export default function Home() {
   const CardProps = [
@@ -33,24 +34,27 @@ export default function Home() {
     },
   ];
   return (
-    <Flex
-      asChild
-      height={{ initial: "60vh", sm: "70vh" }}
-      direction="column"
-      align="center"
-      justify="center"
-      gap="4"
-    >
-      <section id={SECTIONS.HOME}>
-        <Flex gap="3">
-          {CardProps.map((props) => (
-            <SnsLinkCard key={props.title} {...props} />
-          ))}
-          <MapCard />
-        </Flex>
-        <GitHubCard />
-      </section>
-    </Flex>
+    <LinkTarget name={SECTIONS.HOME}>
+      <Flex
+        asChild
+        height={{ initial: "60vh", xs: "50vh", md: "70vh" }}
+        direction="column"
+        align="center"
+        justify="center"
+        gap="4"
+        className="-mb-44"
+      >
+        <section id={SECTIONS.HOME}>
+          <Flex gap="3">
+            {CardProps.map((props) => (
+              <SnsLinkCard key={props.title} {...props} />
+            ))}
+            <MapCard />
+          </Flex>
+          <GitHubCard />
+        </section>
+      </Flex>
+    </LinkTarget>
   );
 }
 

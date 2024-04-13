@@ -1,6 +1,6 @@
 import { Box, Button } from "@radix-ui/themes";
-import Link from "next/link";
 import { SECTIONS } from "@/constant";
+import InternalLink from "./internal-link";
 
 export default function Header() {
   return (
@@ -14,7 +14,7 @@ export default function Header() {
         <header>
           <nav>
             <ul className="m-0 flex w-[80vw] justify-between p-0 md:w-[30rem]">
-              {Object.values(SECTIONS).map((sectionItem) => (
+              {Object.values(SECTIONS).map((sectionItem, index) => (
                 <Button
                   size={{ initial: "1", xs: "2", sm: "4" }}
                   variant="ghost"
@@ -23,12 +23,13 @@ export default function Header() {
                   key={sectionItem}
                 >
                   <li>
-                    <Link
-                      href={`#${sectionItem}`}
+                    <InternalLink
+                      to={sectionItem}
                       aria-label={`${sectionItem}セクションへ遷移`}
+                      isTop={index === 0}
                     >
                       {sectionItem.toUpperCase()}
-                    </Link>
+                    </InternalLink>
                   </li>
                 </Button>
               ))}
