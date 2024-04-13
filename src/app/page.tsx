@@ -3,14 +3,21 @@ import Hero from "@/components/hero";
 import Home from "@/components/home";
 import Skills from "@/components/skills";
 import Blogs from "@/components/blogs";
+import Experiences from "@/components/experiences";
 
 export default function Main() {
   return (
     <main className="flex flex-col lg:flex-row">
       <Hero />
-      <Flex className="grow lg:w-3/5" height="220rem" direction="column">
+      <Flex
+        className="grow lg:w-3/5"
+        height="220rem"
+        direction="column"
+        gap="3"
+      >
         <Home />
         <Skills />
+        <Experiences />
         <Blogs />
       </Flex>
     </main>
