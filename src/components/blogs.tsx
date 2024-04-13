@@ -15,46 +15,48 @@ import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import { ARTICLES } from "@/constant/zenn-article";
 import { SECTIONS } from "@/constant";
 import SectionHeading from "./section-heading";
+import LinkTarget from "./link-target";
 
 export default function Blogs() {
   return (
-    <Flex
-      gap="7"
-      justify="center"
-      align="center"
-      direction="column"
-      pt="9"
-      px={{ initial: "2", sm: "5" }}
-      asChild
-      pb="9"
-    >
-      <section id={SECTIONS.BLOGS}>
-        <SectionHeading title="Blogs" />
-        <Grid
-          columns="2"
-          gapX={{ initial: "1", xs: "3" }}
-          gapY={{ initial: "2", xs: "5" }}
-          rows="2"
-          width="100%"
-          align="stretch"
-        >
-          {ARTICLES.map((blog) => (
-            <BlogCard {...blog} key={blog.title} />
-          ))}
-        </Grid>
-        <Flex align="center" gap="2" asChild>
-          <RadixLink
-            href="https://zenn.dev/akky1991"
-            size={{ initial: "3", xs: "6" }}
-            color="gray"
-            wrap="nowrap"
+    <LinkTarget name={SECTIONS.BLOGS}>
+      <Flex
+        gap="7"
+        justify="center"
+        align="center"
+        direction="column"
+        px={{ initial: "2", sm: "5" }}
+        asChild
+        pb="9"
+      >
+        <section id={SECTIONS.BLOGS}>
+          <SectionHeading title="Blogs" />
+          <Grid
+            columns="2"
+            gapX={{ initial: "1", xs: "3" }}
+            gapY={{ initial: "2", xs: "5" }}
+            rows="2"
+            width="100%"
+            align="stretch"
           >
-            View More
-            <ExternalLinkIcon style={{ width: "auto", height: "75%" }} />
-          </RadixLink>
-        </Flex>
-      </section>
-    </Flex>
+            {ARTICLES.map((blog) => (
+              <BlogCard {...blog} key={blog.title} />
+            ))}
+          </Grid>
+          <Flex align="center" gap="2" asChild>
+            <RadixLink
+              href="https://zenn.dev/akky1991"
+              size={{ initial: "3", xs: "6" }}
+              color="gray"
+              wrap="nowrap"
+            >
+              View More
+              <ExternalLinkIcon style={{ width: "auto", height: "75%" }} />
+            </RadixLink>
+          </Flex>
+        </section>
+      </Flex>
+    </LinkTarget>
   );
 }
 
