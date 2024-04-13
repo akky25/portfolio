@@ -23,7 +23,7 @@ export const ARTICLES = [
     date: "2024/03/10",
     tags: ["RadixUI", "shadcn/ui"],
     image: image3,
-    link: "",
+    link: "https://zenn.dev/akky1991/articles/5ea9f84a094502",
   },
   {
     title: "Next.js + Storybook に Tailwind CSSを適用",
