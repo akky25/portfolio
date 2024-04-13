@@ -1,25 +1,15 @@
-import {
-  Slot,
-  Box,
-  Card,
-  Flex,
-  Heading,
-  Text,
-  AspectRatio,
-} from "@radix-ui/themes";
+import { Slot, Card, Flex, Text, AspectRatio } from "@radix-ui/themes";
 import React from "react";
 import Marquee from "react-fast-marquee";
 import { skillsIcons } from "@/constant/skillsIcon";
+import { SECTIONS } from "@/constant";
+import SectionHeading from "./section-heading";
 
 export default function Skills() {
   return (
     <Flex gap="5" align="center" direction="column" height="30vh" asChild>
-      <section>
-        <Box className="border-b-4 border-[var(--accent-9)]" pb="1" px="1">
-          <Heading as="h2" size="8">
-            Skills
-          </Heading>
-        </Box>
+      <section id={SECTIONS.SKILLS}>
+        <SectionHeading title="Skills" />
         <div className="w-full overflow-hidden px-0 py-8 lg:px-3">
           <span className="sr-only">セクションタイトル</span>
           <Marquee play={true}>

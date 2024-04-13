@@ -12,7 +12,7 @@ import { SVGProps } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
-import { LINK_URL } from "@/constant";
+import { LINK_URL, SECTIONS } from "@/constant";
 import { fetchGitHubContributions } from "@/utils";
 import { GitHub, Z, Zenn } from "./icon";
 import MapImage from "./assets/map.png";
@@ -41,7 +41,7 @@ export default function Home() {
       justify="center"
       gap="4"
     >
-      <section>
+      <section id={SECTIONS.HOME}>
         <Flex gap="3">
           {CardProps.map((props) => (
             <SnsLinkCard key={props.title} {...props} />

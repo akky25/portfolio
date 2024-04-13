@@ -1,7 +1,6 @@
 import {
   AspectRatio,
   Badge,
-  Box,
   Card,
   Flex,
   Grid,
@@ -14,6 +13,8 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { ExternalLinkIcon } from "@radix-ui/react-icons";
 import { ARTICLES } from "@/constant/zenn-article";
+import { SECTIONS } from "@/constant";
+import SectionHeading from "./section-heading";
 
 export default function Blogs() {
   return (
@@ -25,13 +26,10 @@ export default function Blogs() {
       pt="9"
       px={{ initial: "2", sm: "5" }}
       asChild
+      pb="9"
     >
-      <section>
-        <Box className="border-b-4 border-[var(--accent-9)]" pb="1">
-          <Heading as="h2" size="8">
-            Blogs
-          </Heading>
-        </Box>
+      <section id={SECTIONS.BLOGS}>
+        <SectionHeading title="Blogs" />
         <Grid
           columns="2"
           gapX={{ initial: "1", xs: "3" }}
