@@ -221,8 +221,6 @@ function ExperienceCard({
           <Flex gap="2" direction="column">
             <Text color="gray" size="1">
               <time>{date}</time>
-              {/* {date} */}
-              {/* 2021/4 - 2022/5 */}
             </Text>
             <Box>
               <Text as="p" size="4">

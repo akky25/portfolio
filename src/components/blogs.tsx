@@ -27,7 +27,6 @@ export default function Blogs() {
         direction="column"
         px={{ initial: "2", sm: "5" }}
         asChild
-        pb="9"
       >
         <section id={SECTIONS.BLOGS}>
           <SectionHeading title="Blogs" />
