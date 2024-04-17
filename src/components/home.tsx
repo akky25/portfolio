@@ -71,7 +71,7 @@ function SnsLinkCard({
 }) {
   // const Icon = PrimeTwitter;
   return (
-    <Link href={url}>
+    <Link href={url} aria-label={`${title} ${handle}`}>
       <Card>
         <Flex
           align="center"
@@ -97,7 +97,10 @@ function SnsLinkCard({
 
 function MapCard() {
   return (
-    <Link href="https://maps.app.goo.gl/inXZp78JGNEFJUki8">
+    <Link
+      href="https://maps.app.goo.gl/inXZp78JGNEFJUki8"
+      aria-label="google map saitama-city"
+    >
       <Card>
         <Inset>
           <Box
@@ -144,7 +147,7 @@ async function GitHubCard() {
   );
 
   return (
-    <Link href={LINK_URL.GITHUB}>
+    <Link href={LINK_URL.GITHUB} aria-label="github akky25">
       <Card>
         <Flex>
           <Flex

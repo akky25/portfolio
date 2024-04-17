@@ -19,7 +19,8 @@ export default function SubProjects() {
                   <Card>
                     <Flex
                       align={{ initial: "start", xs: "center" }}
-                      gap="5"
+                      // gap="1"
+                      gap={{ initial: "0", xs: "5" }}
                       direction={{ initial: "column", xs: "row" }}
                     >
                       <Inset
@@ -33,7 +34,12 @@ export default function SubProjects() {
                           sizes="(max-width: 520px) 100vw, (max-width: 1200px) 20vw, 200px"
                         />
                       </Inset>
-                      <Flex gap="2" direction="column" className="flex-[7.5]">
+                      <Flex
+                        gap="2"
+                        direction="column"
+                        className="flex-[7.5]"
+                        p="3"
+                      >
                         <Box>
                           <Heading as="h3" size="4">
                             {project.title}

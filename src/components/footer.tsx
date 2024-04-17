@@ -17,10 +17,10 @@ export default function Header() {
           <Text as="p" size={{ initial: "1", md: "2" }}>
             {`© ${new Date().getFullYear()} Ryohei Akita`}
           </Text>
-          <Link href={LINK_URL.X}>
+          <Link href={LINK_URL.X} aria-label="x akky_52">
             <X className="h-4 " />
           </Link>
-          <Link href={LINK_URL.GITHUB}>
+          <Link href={LINK_URL.GITHUB} aria-label="github akky25">
             <GitHub className="h-4 " />
           </Link>
         </Flex>

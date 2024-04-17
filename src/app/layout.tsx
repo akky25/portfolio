@@ -25,7 +25,7 @@ export default function RootLayout({
           panelBackground="translucent"
         >
           <div
-            className="fixed -z-50 h-screen w-screen "
+            className="fixed -z-50 h-[75vh] w-screen lg:h-screen "
             style={{
               backgroundImage: 'url("/background.svg")',
               backgroundSize: "cover",

@@ -129,7 +129,7 @@ export default function Experiences() {
                 align={{ initial: "start", xs: "center" }}
                 direction={{ initial: "column", xs: "row" }}
               >
-                <Text weight="bold" size={{ initial: "3", xs: "4" }}>
+                <Text weight="bold" size={{ initial: "4", xs: "4" }}>
                   株式会社 NTTデータ・ビジネス・システムズ
                 </Text>
                 <Text size={{ initial: "1", xs: "2" }} color="gray">
@@ -167,7 +167,7 @@ export default function Experiences() {
                 align={{ initial: "start", xs: "center" }}
                 direction={{ initial: "column", xs: "row" }}
               >
-                <Text weight="bold" size={{ initial: "3", xs: "4" }}>
+                <Text weight="bold" size={{ initial: "4", xs: "4" }}>
                   日本大学大学院 理工学研究科 物理学専攻
                 </Text>
                 <Text size={{ initial: "1", xs: "2" }} color="gray">
