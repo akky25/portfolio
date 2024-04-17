@@ -10,7 +10,7 @@ export default function SubProjects() {
   return (
     <LinkTarget name={SECTIONS.BLOGS}>
       <Flex gap="7" align="center" direction="column" asChild>
-        <section>
+        <section id={SECTIONS.PROJECTS}>
           <SectionHeading title="Sub Projects" />
           <Flex direction="column" className="self-stretch" gap="3" px="5">
             {Object.values(SUB_PROJECTS).map((project) => {

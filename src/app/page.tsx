@@ -10,7 +10,7 @@ export default function Main() {
   return (
     <main className="flex flex-col lg:flex-row">
       <Hero />
-      <Flex className="grow gap-40 lg:w-3/5" direction="column" pb="9">
+      <Flex className="grow gap-40 pb-32 lg:w-3/5" direction="column">
         <Home />
         <Skills />
         <Experiences />
