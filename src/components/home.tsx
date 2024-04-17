@@ -14,17 +14,17 @@ import Image from "next/image";
 import clsx from "clsx";
 import { LINK_URL, SECTIONS } from "@/constant";
 import { fetchGitHubContributions } from "@/utils";
-import { GitHub, Z, Zenn } from "./icon";
+import { GitHub, X, Zenn } from "./icon";
 import MapImage from "./assets/map.png";
 import LinkTarget from "./link-target";
 
 export default function Home() {
   const CardProps = [
     {
-      Icon: Z,
+      Icon: X,
       title: "Twitter",
       handle: "@akky_52",
-      url: LINK_URL.Z,
+      url: LINK_URL.X,
     },
     {
       Icon: Zenn,

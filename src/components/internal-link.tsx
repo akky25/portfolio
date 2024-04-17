@@ -16,7 +16,7 @@ export default function InternalLink({
       to={to}
       aria-label={`${to}セクションへ遷移`}
       smooth={true}
-      duration={300}
+      duration={700}
       offset={isTop ? -1000 : -150}
     >
       {children}

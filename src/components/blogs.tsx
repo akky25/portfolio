@@ -32,8 +32,8 @@ export default function Blogs() {
           <SectionHeading title="Blogs" />
           <Grid
             columns="2"
-            gapX={{ initial: "1", xs: "3" }}
-            gapY={{ initial: "2", xs: "5" }}
+            gapX={{ initial: "2", xs: "3" }}
+            gapY={{ initial: "3", xs: "5" }}
             rows="2"
             width="100%"
             align="stretch"
@@ -96,7 +96,8 @@ function BlogCard({
         <Flex
           pt="2"
           gap={{ initial: "1", xs: "2" }}
-          className="overflow-x-auto"
+          // className="overflow-x-auto"
+          wrap="wrap"
         >
           {tags.map((tag) => (
             <Badge
