@@ -1,6 +1,6 @@
 import type { SVGProps } from "react";
 
-export function Z(props: SVGProps<SVGSVGElement>) {
+export function X(props: SVGProps<SVGSVGElement>) {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" {...props}>
       <g fill="none">
