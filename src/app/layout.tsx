@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./main.css";
 import { Container, Theme } from "@radix-ui/themes";
+import { Analytics } from "@vercel/analytics/react";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
 
@@ -42,6 +43,7 @@ export default function RootLayout({
           </Container>
           <Footer />
         </Theme>
+        <Analytics />
       </body>
     </html>
   );
