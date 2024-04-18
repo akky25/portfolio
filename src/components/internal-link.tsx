@@ -18,6 +18,7 @@ export default function InternalLink({
       smooth={true}
       duration={700}
       offset={isTop ? -1000 : -150}
+      href={`#${to}`}
     >
       {children}
     </Link>

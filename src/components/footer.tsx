@@ -10,7 +10,7 @@ export default function Header() {
     <>
       <footer className="flex flex-col-reverse items-center gap-4 bg-white/10 py-4  md:justify-start xl:flex-row xl:gap-9 xl:pl-[50%]">
         <Flex
-          gap="3"
+          gap="4"
           // eslint-disable-next-line tailwindcss/enforces-negative-arbitrary-values
           className="items-center justify-center xl:-ml-[10vw] xl:w-[20vw]"
         >
