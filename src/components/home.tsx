@@ -5,24 +5,26 @@ import {
   Flex,
   Grid,
   Inset,
+  Spinner,
   Text,
 } from "@radix-ui/themes";
 import { SVGProps } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import clsx from "clsx";
-import { LINK_URL } from "@/constant";
+import { LINK_URL, SECTIONS } from "@/constant";
 import { fetchGitHubContributions } from "@/utils";
-import { GitHub, Z, Zenn } from "./icon";
+import { GitHub, X, Zenn } from "./icon";
 import MapImage from "./assets/map.png";
+import LinkTarget from "./link-target";
 
 export default function Home() {
   const CardProps = [
     {
-      Icon: Z,
+      Icon: X,
       title: "Twitter",
       handle: "@akky_52",
-      url: LINK_URL.Z,
+      url: LINK_URL.X,
     },
     {
       Icon: Zenn,
@@ -32,24 +34,27 @@ export default function Home() {
     },
   ];
   return (
-    <Flex
-      asChild
-      height={{ initial: "60vh", sm: "70vh" }}
-      direction="column"
-      align="center"
-      justify="center"
-      gap="4"
-    >
-      <section>
-        <Flex gap="3">
-          {CardProps.map((props) => (
-            <SnsLinkCard key={props.title} {...props} />
-          ))}
-          <MapCard />
-        </Flex>
-        <GitHubCard />
-      </section>
-    </Flex>
+    <LinkTarget name={SECTIONS.HOME}>
+      <Flex
+        asChild
+        height={{ initial: "60vh", xs: "50vh", md: "70vh" }}
+        direction="column"
+        align="center"
+        justify="center"
+        gap="4"
+        className="-mb-44"
+      >
+        <section id={SECTIONS.HOME}>
+          <Flex gap="3">
+            {CardProps.map((props) => (
+              <SnsLinkCard key={props.title} {...props} />
+            ))}
+            <MapCard />
+          </Flex>
+          <GitHubCard />
+        </section>
+      </Flex>
+    </LinkTarget>
   );
 }
 
@@ -66,7 +71,7 @@ function SnsLinkCard({
 }) {
   // const Icon = PrimeTwitter;
   return (
-    <Link href={url}>
+    <Link href={url} aria-label={`${title} ${handle}`}>
       <Card>
         <Flex
           align="center"
@@ -92,7 +97,10 @@ function SnsLinkCard({
 
 function MapCard() {
   return (
-    <Link href="https://maps.app.goo.gl/inXZp78JGNEFJUki8">
+    <Link
+      href="https://maps.app.goo.gl/inXZp78JGNEFJUki8"
+      aria-label="google map saitama-city"
+    >
       <Card>
         <Inset>
           <Box
@@ -139,7 +147,7 @@ async function GitHubCard() {
   );
 
   return (
-    <Link href={LINK_URL.GITHUB}>
+    <Link href={LINK_URL.GITHUB} aria-label="github akky25">
       <Card>
         <Flex>
           <Flex
@@ -161,13 +169,15 @@ async function GitHubCard() {
             </Flex>
           </Flex>
           <Box position="relative">
-            <Flex gap="6" pl="4">
-              {getPastThreeMonths().map((month) => (
-                <Text key={month} color="gray" size="1">
-                  {month}
-                </Text>
-              ))}
-            </Flex>
+            {gitHubContributions.length !== 0 && (
+              <Flex gap="6" pl="4">
+                {getPastThreeMonths().map((month) => (
+                  <Text key={month} color="gray" size="1">
+                    {month}
+                  </Text>
+                ))}
+              </Flex>
+            )}
             <Grid
               flow="column"
               rows="repeat(7, 1fr)"
@@ -177,12 +187,16 @@ async function GitHubCard() {
               p={{ initial: "2", sm: "4" }}
               pt="1"
             >
-              {gitHubContributions.map((items, i) => (
-                <AspectRatio
-                  key={i}
-                  className={colorByNumber(items.contributionCount)}
-                />
-              ))}
+              {gitHubContributions.length === 0 ? (
+                <Spinner className="absolute left-[40%] top-[40%]" />
+              ) : (
+                gitHubContributions.map((items, i) => (
+                  <AspectRatio
+                    key={i}
+                    className={colorByNumber(items.contributionCount)}
+                  />
+                ))
+              )}
             </Grid>
           </Box>
         </Flex>
