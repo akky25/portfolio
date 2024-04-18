@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
-import "@radix-ui/themes/styles.css";
-import "./globals.css";
+// import "@radix-ui/themes/styles.css";
+
+// import "@radix-ui/themes/components.css";
+// import "@radix-ui/themes/tokens/base.css";
+// import "@radix-ui/themes/tokens/colors/cyan.css";
+// import "@radix-ui/themes/tokens/colors/sage.css";
+// import "@radix-ui/themes/utilities.css";
+
+// import "./globals.css";
+import "./main.css";
+
 import { Container, Theme } from "@radix-ui/themes";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
