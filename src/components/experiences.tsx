@@ -29,22 +29,22 @@ const SEPARATOR_LEFT_POSITION = {
 
 const EXPERIENCES: React.ComponentProps<typeof ExperienceCard>[] = [
   {
-    title: "大手通信会社 toC向けWebアプリの開発",
+    title: "大手携帯キャリア会社 toC向けWebアプリの開発",
     date: "2023/7 - 現在",
     description:
-      "大手通信会社、大手芸能事務所合同運営のファンコミュニティサービス開発にフロントエンド領域のテックリードとして参画",
+      "大手携帯キャリア会社、芸能事務所合同運営のファンコミュニティサービス開発にフロントエンド領域のテックリードとして参画",
     tags: ["Next.js", "TypeScript", "Radix UI", "スクラム開発"],
   },
   {
-    title: "大手通信会社 toB向けWebアプリの開発",
+    title: "大手携帯キャリア会社 toB向けWebアプリの開発",
     date: "2022/5 - 2023/6",
     description:
       "通信会社オペレーター向け業務用アプリケーションのSPAアプリ開発にDevチームメンバーとして参画",
     tags: ["React", "TypeScript", "スクラム開発"],
   },
   {
-    title: "大手通信会社 料金プラン申し込み用Webアプリ開発",
-    date: "2021/4 - 2022/5",
+    title: "大手携帯キャリア会社 料金プラン申し込み用Webアプリ開発",
+    date: "2021/4 - 2022/4",
     description:
       "通信会社の新料金プランの申し込み、機種変更等を提供するSPAアプリの開発にDevチームメンバーとして参画",
     tags: ["React", "TypeScript", "スクラム開発"],

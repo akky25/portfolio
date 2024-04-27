@@ -23,7 +23,7 @@ type Content = {
 export const SUB_PROJECTS: Record<string, Content> = {
   VID_APP: {
     title: "動画投稿アプリ",
-    description: "T3スタックを使用したYouTubeクローンのデモ動動画アプリ",
+    description: "T3スタックを使用したYouTubeクローンの動画投稿デモアプリ",
     url: "https://github.com/akky25/videoapp",
     image: imageVidapp,
     icons: [

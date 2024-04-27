@@ -8,7 +8,7 @@ import SectionHeading from "./section-heading";
 
 export default function SubProjects() {
   return (
-    <LinkTarget name={SECTIONS.BLOGS}>
+    <LinkTarget name={SECTIONS.PROJECTS}>
       <Flex gap="7" align="center" direction="column" asChild>
         <section id={SECTIONS.PROJECTS}>
           <SectionHeading title="Sub Projects" />
